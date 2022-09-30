@@ -23,9 +23,11 @@ export const baseNetwork = {
 
     },
     delete: async (url, id) => {
+        let a = {}
         await axiosInstance.delete(`${url}/${id}`)
             .then(res => {
                 if (res.status === 200) {
+                    a = res.data
                     return res.data
                 }
                 else {
@@ -35,7 +37,6 @@ export const baseNetwork = {
             .catch(err => {
                 throw err
             })
-
     },
     add: () => {
 

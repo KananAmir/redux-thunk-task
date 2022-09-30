@@ -16,6 +16,7 @@ const CustomerList = () => {
 
   const handleDelete = (customer) => {
     dispatch(deleteCustomerAction(customer));
+    // dispatch(getAllCustomersAction());
     openNotification()
   }
 

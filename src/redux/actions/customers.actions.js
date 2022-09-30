@@ -16,12 +16,9 @@ export const addCustomerAction = (customer) => {
     })
 }
 export const deleteCustomerAction = (customer) => {
-    customerServices.deleteCustomer(customer.id);
-    return async (dispatch) => {
-        customerServices.getAllCustomers()
-            .then(data => dispatch({
-                type: 'DELETE_CUSTOMER',
-                payload: data
-            }))
-    }
+    customerServices.deleteCustomer(customer.id)
+    return ({
+        type: 'DELETE_CUSTOMER',
+        payload: customer
+    })
 }
