@@ -12,7 +12,7 @@ const CustomerList = () => {
 
   useEffect(() => {
     dispatch(getAllCustomersAction())
-  }, [])
+  }, [dispatch])
 
   const handleDelete = (customer) => {
     dispatch(deleteCustomerAction(customer));

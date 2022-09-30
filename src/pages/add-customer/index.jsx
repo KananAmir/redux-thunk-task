@@ -1,9 +1,15 @@
 import React from 'react'
 import { Button, Form, Input } from 'antd';
+import { addCustomerAction } from '../../redux/actions/customers.actions';
+import { useDispatch } from 'react-redux';
 
 const AddCustomer = () => {
+  const dispatch = useDispatch();
+
   const onFinish = (values) => {
     console.log('Success:', values);
+    dispatch(addCustomerAction(values))
+
   };
 
   const onFinishFailed = (errorInfo) => {

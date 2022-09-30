@@ -9,12 +9,17 @@ export const getAllCustomersAction = () => {
             }))
     }
 }
-export const addCustomerAction = (customer) => {
-    return ({
-        type: 'ADD_CUSTOMER',
-        payload: customer
-    })
+export const addCustomerAction = (data) => {
+    console.log('kanan');
+    return async (dispatch) => {
+        customerServices.addCustomer(data)
+            .then(data => dispatch({
+                type: 'ADD_CUSTOMER',
+                payload: data
+            }))
+    }
 }
+
 export const deleteCustomerAction = (customer) => {
     customerServices.deleteCustomer(customer.id)
     return ({

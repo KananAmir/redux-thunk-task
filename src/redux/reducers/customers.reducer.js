@@ -5,7 +5,7 @@ export const customerReducer = (state = [], action) => {
             return [...action.payload]
 
         case 'ADD_CUSTOMER':
-            return [...state, action.payload]
+            return [action.payload]
 
         case 'DELETE_CUSTOMER':
             return [...state.filter(q => q.id !== action.payload.id)]
